@@ -35,6 +35,11 @@ docker run -d --name fastapi-pgl \
     -p 5432:5432 bitnami/postgresql:16
 
 ```
+We can now build the fast-api application
+
+```bash
+docker build -t enalaps/fastapi-app:latest
+```
 
 We can now lauch the fast-api application
 
@@ -42,7 +47,7 @@ We can now lauch the fast-api application
     docker run --name fastapi-app \
         --network fastapi-net \
         -e DATABASE_URL=postgresql+asyncpg://test:test@fastapi-pgl/tikeePictures \
-        -p 8000:80 ENLAPS/fastapi-app:latest
+        -p 8000:80 enlaps/fastapi-app:latest
 ```
 
 ## Usage
